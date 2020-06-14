@@ -1,14 +1,9 @@
+package com.example.web;
 
+import com.example.model.*;
 
-
-class e2 {
-
-	public static void copyFile4(File srcFile, File destFile) throws IOException {
-		InputStream in = new FileInputStream(srcFile);
-		OutputStream out = new FileOutputStream(destFile);
-		IOUtils.copy(in, out);
-		in.close();
-		out.close();
-	}
-
+class e4 {
+  public static void main(String[] args) {
+    BearExtra.go();
+  }
 }
