@@ -1,0 +1,20 @@
+import java.io.*;
+import java.lang.*;
+import java.util.*;
+import java.math.*;
+import java.net.*;
+import java.applet.*;
+import java.security.*;
+
+
+
+class c10288424 {
+
+    public static String encrypt(String x) throws Exception {
+        MessageDigest mdEnc = MessageDigest.getInstance("SHA-1");
+        mdEnc.update(x.getBytes(), 0, x.length());
+        String md5 = new BigInteger(1, mdEnc.digest()).toString(16);
+        return md5;
+    }
+
+}

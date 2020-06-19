@@ -1,0 +1,41 @@
+
+
+
+class c10899860 {
+
+    public void copy(File in, File out) throws Exception {
+        FileChannel src =(FileChannel)(Object) (new FileInputStream(in).getChannel());
+        FileChannel dest =(FileChannel)(Object) (new FileOutputStream(out).getChannel());
+        src.transferTo(0, src.size(), dest);
+        src.close();
+        dest.close();
+    }
+
+}
+
+// Code below this line has been added to remove errors
+class MyHelperClass {
+
+}
+
+class File {
+
+}
+
+class FileChannel {
+
+public MyHelperClass size(){ return null; }
+	public MyHelperClass close(){ return null; }
+	public MyHelperClass transferTo(int o0, MyHelperClass o1, FileChannel o2){ return null; }}
+
+class FileInputStream {
+
+FileInputStream(){}
+	FileInputStream(File o0){}
+	public MyHelperClass getChannel(){ return null; }}
+
+class FileOutputStream {
+
+FileOutputStream(){}
+	FileOutputStream(File o0){}
+	public MyHelperClass getChannel(){ return null; }}

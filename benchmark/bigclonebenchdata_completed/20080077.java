@@ -1,0 +1,110 @@
+
+
+
+class c20080077 {
+
+    public Writer createWriter(File outfile, String encoding) throws UnsupportedEncodingException, IOException {
+        int k_blockSize = 1024;
+        int byteCount;
+        char[] buf = new char[k_blockSize];
+        ZipOutputStream zos = new ZipOutputStream(new FileOutputStream(outfile));
+        MyHelperClass ZipOutputStream = new MyHelperClass();
+        zos.setMethod(ZipOutputStream.DEFLATED);
+        OutputStreamWriter osw = new OutputStreamWriter(zos, "ISO-8859-1");
+        BufferedWriter bw = new BufferedWriter(osw);
+        ZipEntry zot;
+        MyHelperClass infile = new MyHelperClass();
+        ZipInputStream zis = new ZipInputStream(new FileInputStream(infile));
+        InputStreamReader isr = new InputStreamReader(zis, "ISO-8859-1");
+        BufferedReader br = new BufferedReader(isr);
+        ZipEntry zit;
+        while ((zit =(ZipEntry)(Object) zis.getNextEntry()) != null) {
+            if (zit.getName().equals("content.xml")) {
+                continue;
+            }
+            zot = new ZipEntry((String)(Object)zit.getName());
+            zos.putNextEntry(zot);
+            while ((byteCount =(int)(Object) br.read(buf, 0, k_blockSize)) >= 0) bw.write(buf, 0, byteCount);
+            bw.flush();
+            zos.closeEntry();
+        }
+        zos.putNextEntry(new ZipEntry("content.xml"));
+        bw.flush();
+        return (Writer)(Object)new OutputStreamWriter(zos, "UTF-8");
+    }
+
+}
+
+// Code below this line has been added to remove errors
+class MyHelperClass {
+public MyHelperClass DEFLATED;
+}
+
+class File {
+
+}
+
+class Writer {
+
+}
+
+class UnsupportedEncodingException extends Exception{
+	public UnsupportedEncodingException(String errorMessage) { super(errorMessage); }
+}
+
+class IOException extends Exception{
+	public IOException(String errorMessage) { super(errorMessage); }
+}
+
+class ZipOutputStream {
+
+ZipOutputStream(FileOutputStream o0){}
+	ZipOutputStream(){}
+	public MyHelperClass closeEntry(){ return null; }
+	public MyHelperClass putNextEntry(ZipEntry o0){ return null; }
+	public MyHelperClass setMethod(MyHelperClass o0){ return null; }}
+
+class FileOutputStream {
+
+FileOutputStream(File o0){}
+	FileOutputStream(){}}
+
+class OutputStreamWriter {
+
+OutputStreamWriter(ZipOutputStream o0, String o1){}
+	OutputStreamWriter(){}}
+
+class BufferedWriter {
+
+BufferedWriter(){}
+	BufferedWriter(OutputStreamWriter o0){}
+	public MyHelperClass write(char[] o0, int o1, int o2){ return null; }
+	public MyHelperClass flush(){ return null; }}
+
+class ZipEntry {
+
+ZipEntry(String o0){}
+	ZipEntry(){}
+	public MyHelperClass getName(){ return null; }}
+
+class ZipInputStream {
+
+ZipInputStream(FileInputStream o0){}
+	ZipInputStream(){}
+	public MyHelperClass getNextEntry(){ return null; }}
+
+class FileInputStream {
+
+FileInputStream(MyHelperClass o0){}
+	FileInputStream(){}}
+
+class InputStreamReader {
+
+InputStreamReader(ZipInputStream o0, String o1){}
+	InputStreamReader(){}}
+
+class BufferedReader {
+
+BufferedReader(){}
+	BufferedReader(InputStreamReader o0){}
+	public MyHelperClass read(char[] o0, int o1, int o2){ return null; }}
