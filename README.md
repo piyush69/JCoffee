@@ -1,2 +1,2 @@
 # JCoffee
-Using Compiler Feedback to Make PartialCode Snippets Compilable
+Using Compiler Feedback to Make Partial Code Snippets Compilable
